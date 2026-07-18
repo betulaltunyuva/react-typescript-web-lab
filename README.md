@@ -32,3 +32,5 @@ npm run dev
 Erişilebilirlik puanı: **93**
 
 ![Lighthouse Score](web-images/lighthouse-score.png)
+
+
