@@ -20,6 +20,7 @@ npm install
 npm run dev
 ```
 
+
 ## Proje Görseli
 
 <p align="center">
