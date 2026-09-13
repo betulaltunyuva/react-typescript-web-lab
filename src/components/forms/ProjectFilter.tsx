@@ -1,4 +1,8 @@
-import type { Category, SortField, SortOrder } from "../../types/project";
+import type {
+  Category,
+  SortField,
+  SortOrder,
+} from "../../types/project";
 
 interface ProjectFilterProps {
   search: string;
@@ -13,11 +17,18 @@ interface ProjectFilterProps {
   totalCount: number;
 }
 
-const categories: { value: Category | "all"; label: string }[] = [
-  { value: "all", label: "Tumu" },
-  { value: "frontend", label: "Frontend" },
+const categories: {
+  value: Category | "all";
+  label: string;
+}[] = [
+  { value: "all", label: "All" },
+  { value: "mobile", label: "Mobile" },
   { value: "fullstack", label: "Full Stack" },
-  { value: "backend", label: "Backend" },
+  {
+    value: "machine-learning",
+    label: "Machine Learning",
+  },
+  { value: "cybersecurity", label: "Cybersecurity" },
 ];
 
 export default function ProjectFilter({
@@ -38,11 +49,14 @@ export default function ProjectFilter({
         <input
           type="text"
           value={search}
-          onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Proje ara (baslik, aciklama, teknoloji, kategori)..."
+          onChange={(event) =>
+            onSearchChange(event.target.value)
+          }
+          placeholder="Search by title, description, technology, or category..."
           className="w-full rounded-lg border border-gray-300 px-4 py-2 pl-10 focus:border-transparent focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-          aria-label="Proje ara"
+          aria-label="Search projects"
         />
+
         <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
           🔍
         </span>
@@ -52,20 +66,22 @@ export default function ProjectFilter({
         <div
           className="flex flex-wrap gap-2"
           role="group"
-          aria-label="Kategori filtresi"
+          aria-label="Project category filter"
         >
-          {categories.map((cat) => (
+          {categories.map((item) => (
             <button
-              key={cat.value}
-              onClick={() => onCategoryChange(cat.value)}
+              key={item.value}
+              onClick={() =>
+                onCategoryChange(item.value)
+              }
               className={`rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
-                category === cat.value
+                category === item.value
                   ? "bg-blue-600 text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               }`}
-              aria-pressed={category === cat.value}
+              aria-pressed={category === item.value}
             >
-              {cat.label}
+              {item.label}
             </button>
           ))}
         </div>
@@ -73,29 +89,40 @@ export default function ProjectFilter({
         <div className="flex items-center gap-2">
           <select
             value={sortField}
-            onChange={(e) => onSortFieldChange(e.target.value as SortField)}
+            onChange={(event) =>
+              onSortFieldChange(
+                event.target.value as SortField
+              )
+            }
             className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-white"
-            aria-label="Siralama alani"
+            aria-label="Sort projects by"
           >
-            <option value="year">Yil</option>
-            <option value="title">Baslik</option>
+            <option value="year">Year</option>
+            <option value="title">Title</option>
           </select>
+
           <button
             onClick={() =>
-              onSortOrderChange(sortOrder === "asc" ? "desc" : "asc")
+              onSortOrderChange(
+                sortOrder === "asc" ? "desc" : "asc"
+              )
             }
             className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm hover:bg-gray-100 dark:border-gray-600 dark:text-white dark:hover:bg-gray-700"
-            aria-label={`Siralama yonu: ${
-              sortOrder === "asc" ? "artan" : "azalan"
+            aria-label={`Sort order: ${
+              sortOrder === "asc"
+                ? "ascending"
+                : "descending"
             }`}
           >
-            {sortOrder === "asc" ? "↑ Artan" : "↓ Azalan"}
+            {sortOrder === "asc"
+              ? "↑ Ascending"
+              : "↓ Descending"}
           </button>
         </div>
       </div>
 
       <p className="text-sm text-gray-500 dark:text-gray-400">
-        {resultCount} / {totalCount} proje gosteriliyor
+        Showing {resultCount} of {totalCount} projects
       </p>
     </div>
   );
