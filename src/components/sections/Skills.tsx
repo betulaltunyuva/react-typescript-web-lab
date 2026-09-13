@@ -14,8 +14,9 @@ export default function Skills() {
     <section className="bg-gray-50 py-16 dark:bg-gray-900/40">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
-          Yetenekler
+          Technical Skills
         </h2>
+
         <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (
             <span
