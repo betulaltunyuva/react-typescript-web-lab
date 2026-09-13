@@ -8,7 +8,8 @@ export default function ContactSection() {
       </h2>
 
       <p className="mb-6 text-gray-600 dark:text-gray-300">
-        Complete the form below to get in touch with me.
+        This demonstration form showcases validation and interaction states.
+        It does not send messages to a backend service.
       </p>
 
       <ContactForm />
