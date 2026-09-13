@@ -38,7 +38,7 @@ export function sortProjects(
     if (field === "year") {
       return a.year - b.year;
     }
-    return a.title.localeCompare(b.title, "tr");
+   return a.title.localeCompare(b.title, "en");
   });
 
   return order === "desc" ? sorted.reverse() : sorted;
