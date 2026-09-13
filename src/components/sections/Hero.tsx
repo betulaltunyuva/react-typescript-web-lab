@@ -6,26 +6,30 @@ export default function Hero() {
     >
       <div className="max-w-2xl text-center">
         <p className="mb-2 font-medium text-blue-600 dark:text-blue-400">
-          Merhaba, ben
+          Hello, I am
         </p>
+
         <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white md:text-6xl">
-          Betul Altunyuva
+          Betül Altunyuva
         </h1>
+
         <p className="mb-8 text-lg text-gray-600 dark:text-gray-300 md:text-xl">
-          Frontend Developer | React & TypeScript
+          Software Engineering Student | React & TypeScript
         </p>
+
         <div className="flex flex-wrap justify-center gap-4">
           <a
             href="#projects"
             className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
           >
-            Projelerimi Gor
+            View My Projects
           </a>
+
           <a
             href="#contact"
             className="rounded-lg border border-blue-600 px-6 py-3 font-medium text-blue-600 transition-colors hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-gray-800"
           >
-            Iletisime Gec
+            Contact Me
           </a>
         </div>
       </div>
