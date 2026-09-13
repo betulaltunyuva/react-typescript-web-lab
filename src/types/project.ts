@@ -1,4 +1,8 @@
-export type Category = "frontend" | "fullstack" | "backend";
+export type Category =
+  | "mobile"
+  | "fullstack"
+  | "machine-learning"
+  | "cybersecurity";
 
 export type SortField = "year" | "title";
 
@@ -12,7 +16,6 @@ export interface Project {
   year: number;
   category: Category;
   featured: boolean;
-  image: string;
   demoUrl?: string;
   sourceUrl?: string;
 }
