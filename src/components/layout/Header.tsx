@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#hero", label: "Ana Sayfa" },
-  { href: "#about", label: "Hakkimda" },
-  { href: "#projects", label: "Projeler" },
-  { href: "#contact", label: "Iletisim" },
+  { href: "#hero", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -14,7 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/80">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <a href="#hero" className="text-xl font-bold text-blue-600">
-          Portfolyo
+          Portfolio
         </a>
 
         <ul className="hidden gap-6 md:flex">
@@ -31,9 +31,9 @@ export default function Header() {
         </ul>
 
         <button
-          onClick={() => setMenuOpen((prev) => !prev)}
+          onClick={() => setMenuOpen((previous) => !previous)}
           className="p-2 md:hidden"
-          aria-label="Menu"
+          aria-label="Toggle navigation menu"
           aria-expanded={menuOpen}
         >
           <span className="mb-1 block h-0.5 w-6 bg-gray-600" />
