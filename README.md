@@ -4,7 +4,7 @@
 
 ### A modern, responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS
 
-[![CI](https://img.shields.io/github/actions/workflow/status/betulaltunyuva/react-typescript-web-lab/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/betulaltunyuva/react-typescript-web-lab/actions/workflows/ci.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/betulaltunyuva/react-typescript-web-lab/main.yml?branch=main&style=flat-square&label=CI)](https://github.com/betulaltunyuva/react-typescript-web-lab/actions/workflows/main.yml)
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square\&logo=react\&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square\&logo=vite\&logoColor=white)
