@@ -49,6 +49,17 @@ function validate(data: ContactFormData): FormErrors {
   return newErrors;
 }
 
+const baseFieldClass =
+  "w-full rounded-xl border bg-white px-4 py-3 text-slate-900 outline-none transition placeholder:text-slate-400 focus:ring-4 dark:bg-slate-950 dark:text-white";
+
+function getFieldClass(hasError: boolean) {
+  return `${baseFieldClass} ${
+    hasError
+      ? "border-red-400 focus:border-red-500 focus:ring-red-500/10"
+      : "border-slate-200 focus:border-blue-500 focus:ring-blue-500/10 dark:border-slate-700"
+  }`;
+}
+
 export default function ContactForm() {
   const [formData, setFormData] =
     useState<ContactFormData>(initialFormData);
@@ -86,8 +97,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      console.log("Form data:", formData);
+      await new Promise((resolve) => setTimeout(resolve, 700));
       setSubmitSuccess(true);
       setFormData(initialFormData);
     } finally {
@@ -97,32 +107,36 @@ export default function ContactForm() {
 
   if (submitSuccess) {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-center">
-        <p className="font-medium text-green-800">
-          The demo form was submitted successfully.
+      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-8 text-center dark:border-emerald-900 dark:bg-emerald-950/40">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-2xl font-bold text-white">
+          ✓
+        </div>
+
+        <h4 className="mt-5 text-lg font-bold text-emerald-900 dark:text-emerald-100">
+          Form validation completed
+        </h4>
+
+        <p className="mt-2 text-sm text-emerald-700 dark:text-emerald-300">
+          This was a demonstration. No message was sent.
         </p>
 
         <button
           type="button"
           onClick={() => setSubmitSuccess(false)}
-          className="mt-4 text-sm text-green-700 underline"
+          className="mt-5 rounded-xl border border-emerald-300 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100 dark:border-emerald-800 dark:text-emerald-300"
         >
-          Submit another response
+          Try the form again
         </button>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-lg space-y-4"
-      noValidate
-    >
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div>
         <label
           htmlFor="name"
-          className="mb-1 block text-sm font-medium"
+          className="mb-2 block text-sm font-bold text-slate-700 dark:text-slate-200"
         >
           Full Name
         </label>
@@ -134,25 +148,19 @@ export default function ContactForm() {
           onChange={(event) =>
             handleChange("name", event.target.value)
           }
-          className={`w-full rounded-lg border px-3 py-2 ${
-            errors.name
-              ? "border-red-500"
-              : "border-gray-300"
-          }`}
+          className={getFieldClass(Boolean(errors.name))}
           placeholder="Enter your full name"
         />
 
         {errors.name && (
-          <p className="mt-1 text-sm text-red-500">
-            {errors.name}
-          </p>
+          <p className="mt-2 text-sm text-red-500">{errors.name}</p>
         )}
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="mb-1 block text-sm font-medium"
+          className="mb-2 block text-sm font-bold text-slate-700 dark:text-slate-200"
         >
           Email Address
         </label>
@@ -164,25 +172,19 @@ export default function ContactForm() {
           onChange={(event) =>
             handleChange("email", event.target.value)
           }
-          className={`w-full rounded-lg border px-3 py-2 ${
-            errors.email
-              ? "border-red-500"
-              : "border-gray-300"
-          }`}
+          className={getFieldClass(Boolean(errors.email))}
           placeholder="name@example.com"
         />
 
         {errors.email && (
-          <p className="mt-1 text-sm text-red-500">
-            {errors.email}
-          </p>
+          <p className="mt-2 text-sm text-red-500">{errors.email}</p>
         )}
       </div>
 
       <div>
         <label
           htmlFor="subject"
-          className="mb-1 block text-sm font-medium"
+          className="mb-2 block text-sm font-bold text-slate-700 dark:text-slate-200"
         >
           Subject
         </label>
@@ -193,21 +195,16 @@ export default function ContactForm() {
           onChange={(event) =>
             handleChange("subject", event.target.value)
           }
-          className={`w-full rounded-lg border px-3 py-2 ${
-            errors.subject
-              ? "border-red-500"
-              : "border-gray-300"
-          }`}
+          className={getFieldClass(Boolean(errors.subject))}
         >
           <option value="">Select a subject...</option>
           <option value="general">General</option>
-          <option value="support">Technical Support</option>
-          <option value="feedback">Feedback</option>
+          <option value="feedback">Project Feedback</option>
           <option value="collaboration">Collaboration</option>
         </select>
 
         {errors.subject && (
-          <p className="mt-1 text-sm text-red-500">
+          <p className="mt-2 text-sm text-red-500">
             {errors.subject}
           </p>
         )}
@@ -216,7 +213,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="mb-1 block text-sm font-medium"
+          className="mb-2 block text-sm font-bold text-slate-700 dark:text-slate-200"
         >
           Message
         </label>
@@ -228,16 +225,14 @@ export default function ContactForm() {
           onChange={(event) =>
             handleChange("message", event.target.value)
           }
-          className={`w-full resize-y rounded-lg border px-3 py-2 ${
-            errors.message
-              ? "border-red-500"
-              : "border-gray-300"
-          }`}
+          className={`${getFieldClass(
+            Boolean(errors.message)
+          )} resize-y`}
           placeholder="Write your message..."
         />
 
         {errors.message && (
-          <p className="mt-1 text-sm text-red-500">
+          <p className="mt-2 text-sm text-red-500">
             {errors.message}
           </p>
         )}
@@ -246,9 +241,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-blue-600 py-2 font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 py-3.5 font-bold text-white shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {isSubmitting ? "Submitting..." : "Submit"}
+        {isSubmitting ? "Validating..." : "Test Form Validation"}
       </button>
     </form>
   );

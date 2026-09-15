@@ -3,19 +3,46 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #1e3a8a;
-  --color-secondary: #2563eb;
-  --color-accent: #7c3aed;
-  --color-surface: #f9fafb;
-  --color-muted: #6b7280;
-  --color-error: #dc2626;
-  --color-success: #16a34a;
+  --color-primary: #2563eb;
+  --color-secondary: #7c3aed;
+  --color-accent: #06b6d4;
+  --color-surface: #f8fafc;
+  --color-muted: #64748b;
 
-  --font-family-sans: system-ui, -apple-system, sans-serif;
-  --font-family-mono: "Fira Code", "Consolas", monospace;
+  --font-family-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-family-mono: "Fira Code", "Cascadia Code", "Consolas", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+.dark body {
+  background-color: #020617;
+  color: #f8fafc;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background-color: #2563eb;
+  color: #ffffff;
+}
