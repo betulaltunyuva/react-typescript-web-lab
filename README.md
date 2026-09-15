@@ -2,33 +2,35 @@
 
 # React TypeScript Web Lab
 
-### A modern, responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS
+### A modern and responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS
 
-[![CI](https://img.shields.io/github/actions/workflow/status/betulaltunyuva/react-typescript-web-lab/main.yml?branch=main&style=flat-square&label=CI)](https://github.com/betulaltunyuva/react-typescript-web-lab/actions/workflows/main.yml)
+[![CI](https://img.shields.io/github/actions/workflow/status/betulaltunyuva/react-typescript-web-lab/main.yml?branch=main\&style=flat-square\&label=CI)](https://github.com/betulaltunyuva/react-typescript-web-lab/actions/workflows/main.yml)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/betulaltunyuva/react-typescript-web-lab/deploy.yml?branch=main\&style=flat-square\&label=Deploy)](https://github.com/betulaltunyuva/react-typescript-web-lab/actions/workflows/deploy.yml)
 ![React](https://img.shields.io/badge/React-19.2-61DAFB?style=flat-square\&logo=react\&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square\&logo=typescript\&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square\&logo=vite\&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2-06B6D4?style=flat-square\&logo=tailwindcss\&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-222222?style=flat-square&logo=github)](https://betulaltunyuva.github.io/react-typescript-web-lab/)
+
+[Live Demo](https://betulaltunyuva.github.io/react-typescript-web-lab/) · [GitHub Repository](https://github.com/betulaltunyuva/react-typescript-web-lab)
 
 </div>
 
 ## About the Project
 
-React TypeScript Web Lab is a responsive portfolio application created to present my software projects, technical skills, and development interests in a clear and interactive interface.
+React TypeScript Web Lab is a responsive portfolio application created to present my software projects, technical skills, and development interests through a clear and interactive interface.
 
-The project started as a university web-development exercise and was later redesigned as a modern personal portfolio. It demonstrates component-based architecture, type-safe development, reusable interface elements, responsive layouts, project filtering, form validation, theme management, and automated quality checks.
+The project started as a university web-development exercise and was later redesigned as a modern personal portfolio. It demonstrates component-based architecture, type-safe development, reusable interface elements, responsive layouts, project filtering, form validation, theme management, automated quality checks, and continuous deployment.
 
-## Preview
+## Live Website
 
-<p align="center">
-  <img src="web-images/portfolio-home.png" alt="Portfolio home page" width="600">
-</p>
+The portfolio is published with GitHub Pages:
+
+[Open the Live Portfolio](https://betulaltunyuva.github.io/react-typescript-web-lab/)
 
 ## Features
 
-* Modern responsive portfolio design
+* Modern and responsive portfolio design
 * Light and dark theme support
 * Theme preference saved in local storage
 * Sticky and responsive navigation
@@ -39,21 +41,14 @@ The project started as a university web-development exercise and was later redes
 * Project search functionality
 * Category-based project filtering
 * Sorting by year and title
-* Custom colors and visuals for each project
+* Custom colors and icons for each project
 * External GitHub repository links
 * Frontend contact-form demonstration
 * Client-side form validation
 * Loading, empty, success, and error states
 * Keyboard-accessible navigation
-* Automated lint and build checks with GitHub Actions
-
-## Project Collection
-
-The portfolio presents projects from mobile development, full-stack development, machine learning, and cybersecurity.
-
-<p align="center">
-  <img src="web-images/portfolio-projects.png" alt="Portfolio projects section" width="600">
-</p>
+* Automated lint and build checks
+* Automatic GitHub Pages deployment
 
 ## Featured Projects
 
@@ -78,10 +73,11 @@ Project information is stored in `public/data/projects.json` and loaded asynchro
 | TypeScript 5.9 | Static type checking                       |
 | Vite 7         | Development server and production build    |
 | Tailwind CSS 4 | Responsive interface styling               |
-| React Router   | Routing support                            |
+| React Router   | Application routing                        |
 | ESLint         | Code-quality analysis                      |
 | JSON           | Local project data source                  |
-| GitHub Actions | Automated lint and build checks            |
+| GitHub Actions | Automated quality checks and deployment    |
+| GitHub Pages   | Public website hosting                     |
 
 ## Project Structure
 
@@ -89,11 +85,12 @@ Project information is stored in `public/data/projects.json` and loaded asynchro
 react-typescript-web-lab/
 ├── .github/
 │   └── workflows/
+│       ├── deploy.yml
 │       └── main.yml
-        └── deploy.yml
 ├── public/
-│   └── data/
-│       └── projects.json
+│   ├── data/
+│   │   └── projects.json
+│   └── favicon.svg
 ├── src/
 │   ├── components/
 │   │   ├── forms/
@@ -119,11 +116,9 @@ react-typescript-web-lab/
 │   ├── App.tsx
 │   ├── index.css
 │   └── main.tsx
-├── web-images/
-│   ├── portfolio-dark.png
-│   ├── portfolio-home.png
-│   └── portfolio-projects.png
 ├── CSS-DECISIONS.md
+├── LICENSE
+├── README.md
 ├── eslint.config.js
 ├── index.html
 ├── package.json
@@ -131,8 +126,7 @@ react-typescript-web-lab/
 ├── tsconfig.app.json
 ├── tsconfig.json
 ├── tsconfig.node.json
-├── vite.config.ts
-└── README.md
+└── vite.config.ts
 ```
 
 ## Installation
@@ -177,12 +171,12 @@ Users can explore the project collection by:
 
 * Searching project titles
 * Searching descriptions and technologies
-* Filtering by project category
+* Filtering projects by category
 * Sorting projects by year
 * Sorting projects alphabetically
-* Opening the associated GitHub repository
+* Opening the associated GitHub repositories
 
-The available categories are:
+The available project categories include:
 
 * Mobile
 * Full Stack
@@ -191,9 +185,9 @@ The available categories are:
 
 ## Theme Management
 
-The navigation bar includes a theme button that switches between light and dark appearances.
+The theme button in the navigation bar switches between light and dark appearances.
 
-The selected theme is saved using `localStorage`. If the user has not previously selected a theme, the application checks the operating system's preferred color scheme.
+The selected preference is stored using `localStorage`. If the user has not previously selected a theme, the application checks the operating system’s preferred color scheme.
 
 ## Contact Form
 
@@ -236,15 +230,45 @@ The CI workflow performs the following operations:
 4. Runs ESLint
 5. Creates a production build
 
-The project is checked with:
+The application is checked with:
 
 * Node.js 20
 * Node.js 22
 * Node.js 24
 
+The CI workflow is stored in:
+
+```text
+.github/workflows/main.yml
+```
+
+## Deployment
+
+The portfolio is automatically deployed to GitHub Pages after changes are pushed to the `main` branch.
+
+The deployment workflow:
+
+1. Downloads the repository
+2. Sets up Node.js
+3. Installs project dependencies
+4. Runs ESLint
+5. Creates the production build
+6. Uploads the generated website
+7. Deploys the website to GitHub Pages
+
+The deployment workflow is stored in:
+
+```text
+.github/workflows/deploy.yml
+```
+
+Live website:
+
+https://betulaltunyuva.github.io/react-typescript-web-lab/
+
 ## CSS Documentation
 
-Detailed explanations of the project's responsive strategy, breakpoints, layout choices, and design decisions are available in:
+Detailed explanations of the project’s responsive strategy, breakpoints, layout choices, and design decisions are available in:
 
 [CSS Decisions](CSS-DECISIONS.md)
 
@@ -253,12 +277,13 @@ Detailed explanations of the project's responsive strategy, breakpoints, layout 
 * Connect the contact form to a backend service
 * Add automated component tests
 * Add individual project detail pages
-* Add real project screenshots to each project card
 * Add page-transition animations
+* Improve project-card interactions
+* Add multilingual interface support
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Author
 
