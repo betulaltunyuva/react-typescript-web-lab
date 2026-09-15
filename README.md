@@ -10,6 +10,7 @@
 ![Vite](https://img.shields.io/badge/Vite-7.3-646CFF?style=flat-square\&logo=vite\&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.2-06B6D4?style=flat-square\&logo=tailwindcss\&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-GitHub_Pages-222222?style=flat-square&logo=github)](https://betulaltunyuva.github.io/react-typescript-web-lab/)
 
 </div>
 
@@ -88,7 +89,8 @@ Project information is stored in `public/data/projects.json` and loaded asynchro
 react-typescript-web-lab/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
+│       └── main.yml
+        └── deploy.yml
 ├── public/
 │   └── data/
 │       └── projects.json
@@ -252,7 +254,6 @@ Detailed explanations of the project's responsive strategy, breakpoints, layout 
 * Add automated component tests
 * Add individual project detail pages
 * Add real project screenshots to each project card
-* Deploy the portfolio to a public hosting service
 * Add page-transition animations
 
 ## License
